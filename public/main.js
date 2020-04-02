@@ -1,7 +1,19 @@
-const main = () => {
-  if (document.querySelector('h1.hello-world')) {
-    document.querySelector('h1.hello-world').textContent = 'Hello, World!'
-  }
-}
+var budgetController = (function() {
+  var x = 23
 
-document.addEventListener('DOMContentLoaded', main)
+  var add = function(a) {
+    return x + a
+  }
+
+  return {
+    publicTest: function(b) {
+      console.log(add(b))
+    }
+  }
+})()
+
+var UIController = (function() {
+  // code here
+})()
+
+//Seperation of Concerns - each part of the application should be interested in doing one thing independently
