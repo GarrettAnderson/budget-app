@@ -17,3 +17,7 @@ var UIController = (function() {
 })()
 
 //Seperation of Concerns - each part of the application should be interested in doing one thing independently
+
+var controller = (function(budgetCtrl, UICtrl) {
+  //code
+})(budgetController)
