@@ -10,7 +10,8 @@ var UIController = (function() {
       var DOMstrings = {
         inputType: '.add__type',
         inputDescription: '.add__description',
-        inputValue: '.add__value'
+        inputValue: '.add__value',
+        inputBtn: '.add__btn'
       }
 
       return {
@@ -30,6 +31,8 @@ var UIController = (function() {
 
 // Global App Controller
 var controller = (function(budgetCtrl, UICtrl) {
+  var DOM = UICtrl.getDOMstrings()
+
   var ctrlAddItem = function() {
     // 1. Get the field input data
 
@@ -46,7 +49,7 @@ var controller = (function(budgetCtrl, UICtrl) {
     console.log('enter was pressed')
   }
 
-  document.querySelector('.add__btn').addEventListener('click', ctrlAddItem)
+  document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem)
 
   document.addEventListener('keypress', function(event) {
     if (event.keyCode === 13 || event.which === 13) {
