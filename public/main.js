@@ -7,11 +7,21 @@ var budgetController = (function() {
 var UIController = (function() {
   return {
     getInput: function() {
-      return {
-        type: document.querySelector('.add__type').value, // Will be either inc or exp
-        description: document.querySelector('.add__description').value,
-        value: document.querySelector('.add__value').value
+      var DOMstrings = {
+        inputType: '.add__type',
+        inputDescription: '.add__description',
+        inputValue: '.add__value'
       }
+
+      return {
+        type: document.querySelector(DOMstrings.inputType).value, // Will be either inc or exp
+        description: document.querySelector(DOMstrings.inputDescription).value,
+        value: document.querySelector(DOMstrings.inputValue).value
+      }
+    },
+
+    getDOMstrings: function() {
+      return DOMstrings
     }
   }
 })()
